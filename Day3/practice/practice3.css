@@ -1,0 +1,35 @@
+/* 실습3 css */
+
+/* 야생의 사자 */
+/* .zoo + .lion */
+p.lion {
+  background-color: red;
+}
+
+/* 사파리 안의 사자 */
+/* .zoo .lion */
+ul .lion {
+  background-color: greenyellow;
+  font-weight: bold;
+}
+
+/* 호랑이 */
+#tiger {
+  background-color: yellow;
+}
+
+/* 사자 */
+.lion {
+  color: sienna;
+}
+
+/* 팬더 */
+#tiger + li {
+  background-color: skyblue;
+}
+
+/* 사파리 사자 뒤 사육사 전부 */
+/* .zoo li.lion ~li */
+li.lion ~ li {
+  background-color: orange;
+}

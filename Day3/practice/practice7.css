@@ -1,0 +1,13 @@
+/* 실습7 */
+
+input[disabled] {
+  background-color: red;
+}
+
+input[placeholder="이름"] {
+  background-color: orange;
+}
+
+input:not(input[placeholder]) {
+  background-color: blue;
+}
