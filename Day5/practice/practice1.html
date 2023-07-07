@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice1</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+      .body {
+        width: 500px;
+        height: 500px;
+        background-color: black;
+        position: relative;
+        color: white;
+      }
+      .item1 {
+        background-color: green;
+        position: relative;
+        left: 50px;
+        top: 30px;
+      }
+
+      .item2 {
+        background-color: brown;
+        position: absolute;
+        right: 30px;
+        bottom: 100px;
+      }
+
+      .item3 {
+        background-color: blue;
+        position: fixed;
+        right: 100px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      컨테이너
+      <div class="item1">item1</div>
+      <div class="item2">item2</div>
+      <div class="item3">item3</div>
+    </div>
+  </body>
+</html>

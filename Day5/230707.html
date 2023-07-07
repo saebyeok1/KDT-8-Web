@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20230707</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+      }
+      .item1 {
+        background-color: lightgoldenrodyellow;
+      }
+      .item2 {
+        background-color: lightpink;
+        left: 30px; /*margin-left말고 그냥 left만 해도 됨*/
+      }
+      .item3 {
+        top: 30px;
+        right: 30px;
+        background-color: lightblue;
+      }
+
+      .parent {
+        position: relative;
+      }
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+      }
+      .circle1 {
+        background-color: #9afaff;
+        top: 0;
+        left: 200px;
+        z-index: 1;
+      }
+      .circle2 {
+        background-color: #84ff8d;
+        top: 0;
+        left: 150px;
+        z-index: 3;
+      }
+      .circle3 {
+        background-color: #ffeb88;
+        z-index: 10;
+        top: 0;
+        left: 100px;
+      }
+      .circle4 {
+        background-color: #ffb680;
+        top: 0;
+        left: 50px;
+      }
+      .circle5 {
+        top: 0;
+        left: 0;
+        background-color: #ff7c7c;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="item1"></div>
+    <div class="item2"></div>
+    <div class="item3"></div>
+    <hr /> -->
+    <div class="parent">
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+      <div class="circle circle3"></div>
+      <div class="circle circle4"></div>
+      <div class="circle circle5"></div>
+    </div>
+  </body>
+</html>
