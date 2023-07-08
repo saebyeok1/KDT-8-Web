@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습3</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: lightcoral;
+        position: relative;
+        /* animation: practice3 3s ease 2s 6 linear; */
+        animation-name: practice3;
+        animation-duration: 3s;
+        /* animation-timing-function: ease; */
+        animation-iteration-count: 6;
+      }
+
+      @keyframes practice3 {
+        0% {
+          top: 0px;
+          left: 0px;
+          right: 0px;
+        }
+        25% {
+          top: 0px;
+          left: 300px;
+          right: 0px;
+        }
+        50% {
+          top: 300px;
+          left: 300px;
+          right: 0px;
+        }
+        75% {
+          top: 300px;
+          left: 0px;
+          right: 0px;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          right: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

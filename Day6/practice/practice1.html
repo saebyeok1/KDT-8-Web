@@ -1,0 +1,52 @@
+<!-- 실습1 z-index와 transform 이용하기  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1</title>
+    <style>
+      .container {
+        margin-left: 100px;
+      }
+      .img1 {
+        border: 1px solid;
+        width: 20%;
+        position: relative;
+        transform: skewY(25deg);
+        z-index: 3;
+        top: 350px;
+        /* transform: rotate(45deg, -45deg); */
+      }
+      .img2 {
+        border: 1px solid;
+        position: relative;
+        width: 20%;
+        right: 200px;
+        top: 250px;
+        z-index: 1;
+        transform: skewY(25deg);
+        /* transform: rotate(45deg, -45deg); */
+      }
+      .img3 {
+        width: 20%;
+        border: 1px solid;
+        position: relative;
+        top: 150px;
+        right: 400px;
+        transform: skewY(25deg);
+        z-index: 0;
+        /* transform: rotate(45deg, -45deg); */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="container">
+        <img src="FXs_YGUUcAEr76J.jpg" alt="" class="img1" />
+        <img src="FXs_YGUUcAEr76J.jpg" alt="" class="img2" />
+        <img src="FXs_YGUUcAEr76J.jpg" alt="" class="img3" />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!-- 실습2 transition으로 움직이는 창 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습2</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        overflow: auto;
+        background-color: black;
+        color: white;
+        transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: ease;
+        transition-delay: 0.5s;
+      }
+      div:hover {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Transition 실습</h1>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione enim
+      commodi ab magni nisi, ipsum molestias et tenetur, ipsa nulla illum
+      molestiae modi culpa quidem sequi consectetur? Perferendis, sapiente
+      dignissimos.
+    </div>
+  </body>
+</html>
