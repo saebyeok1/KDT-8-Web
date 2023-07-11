@@ -1,0 +1,27 @@
+<!-- 실습1. 배열 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let list = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+      // index가 2인 값 출력
+      console.log(list[2]);
+
+      // 좋아하는 색을 마지막에 추가한 후 배열 출력
+      list.push("lightyellow");
+      console.log(list);
+
+      // black이 몇 번째 인덱스에 있는지 출력
+      console.log(list.indexOf("black")); // 값이 -1이면 인덱스에 존재하지 않는 값을 의미
+
+      // 리스트의 순서를 반전시켜서 출력
+      let reversedList = list.reverse();
+      console.log("reversed: ", reversedList);
+    </script>
+  </body>
+</html>

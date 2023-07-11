@@ -1,0 +1,50 @@
+<!-- js(2) 실습3. onclick & 함수 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = prompt("첫번 째 숫자를 입력하세요");
+      a = Number(a);
+      let b = prompt("두번 째 숫자를 입력하세요");
+      b = Number(b);
+
+      function add() {
+        alert(a + b);
+      }
+
+      function sub() {
+        alert(a - b);
+      }
+      function divide() {
+        alert(a / b);
+      }
+      function mul() {
+        alert(a * b);
+      }
+
+      //   // 전역변수(모든/전체 영역), 지역 변수(특정 지역)
+      //   // 전역변수
+      //   let a = prompt("첫번째");
+      //   a = Number(a);
+      //   let b = prompt("두번째");
+      //   b = Number(b);
+      //   function add() {
+      //     let result = Number(a) + b; // a와 b는 전역변수, result는 지역변수
+      //     alert(result);
+      //   }
+      //   function sub() {
+      //     alert(a - b);
+      //   }
+    </script>
+  </body>
+
+  <button onclick="add()">더하기</button>
+  <button onclick="sub()">빼기</button>
+  <button onclick="divide()">나누기</button>
+  <button onclick="mul()">곱하기</button>
+</html>

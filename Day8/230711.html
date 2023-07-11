@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20230711</title>
+  </head>
+  <body>
+    <script>
+      // 문자열
+      const msg = "안녕하세여";
+      //   const name = "길동";
+
+      // 안녕하세요 길동님
+      console.log(msg);
+      console.log(name);
+      console.log("님");
+
+      // + : 변수를 문자로 변환 후 출력
+      console.log(msg + name + "님");
+      // , : 변수가 그대로 나옴
+      console.log(msg, name, "님");
+      // 백틱(`) : 문자를 쓰다가 변수를 쓸 수 있음
+      console.log(`${msg} ${name}님`);
+
+      console.log("-------------");
+      let colors = ["red", "orange", "yellow", "green"];
+      console.log(colors);
+      // 색상 : Array 출력
+      console.log("색상 : " + colors);
+      let list = [1, 2, 3, 4, 5, 6];
+      console.log(list[1]); // 2
+      console.log(list.length); // 리스트의 길이
+      // push : 제일 뒤에 값을 넣는 것
+      list.push(7);
+      console.log(list);
+      // pop : 제일 뒤에 값을 뺴는 것
+      list.pop();
+      console.log(list);
+
+      //형 변환
+      //   let mathScore = prompt("수학 점수를 입력하세요");
+      //   let engScore = prompt("영어 점수를 입력하세요");
+
+      //   let avg = (mathScore + engScore) / 2;
+      //   console.log(avg);
+
+      //문자형 변환
+      let num = 456;
+      console.log(typeof num); // number
+      let num1 = String(num);
+      console.log(typeof num1); // string
+      let num2 = num.toString();
+      console.log(typeof num2); // string
+
+      functionName(); //실행
+      // 함수 선언문 : 어디서든 호출 가능
+      function functionName() {
+        console.log("안녕핫세염");
+      } //functionName() 함수를 선언 한 것
+      functionName(); //실행
+
+      // 함수 표현식 : 코드에 도달하면 생성
+      let sayHello = function () {
+        console.log("안녕하세세염");
+      }; // 익명 함수는 형태를 화살표로 가져갈 수 잇음
+      sayHello();
+
+      let functionName3 = () => {
+        console.log("안녕하세염");
+      }; // 익명 함수는 형태를 화살표로 가져갈 수 잇음
+
+      // 함수
+      function hello(name, age) {
+        console.log(name + "님 안녕하세요");
+        console.log(age + "세");
+
+        return age + 10;
+      }
+      let result = hello("홍길동", 10);
+      console.log("result: " + result);
+
+      // Onclick
+      function test() {
+        alert("클릭했습니다");
+      }
+
+      function test2(obj) {
+        console.log(obj);
+        console.log(obj.value);
+      }
+
+      // if 조건문
+      /*
+          if (조건1) {
+              // 조건1이 참일 때 실행할 코드
+          } else if (조건2){
+              // 조건2가 참일 때 실행할 코드
+          } else{
+              // 위의 모든 조건들이 부함하지 않을 때 실행함
+          }
+        */
+      if (3 > 5) {
+        console.log("3>5");
+      }
+
+      if (3 < 5) {
+        console.log("3<5");
+      }
+
+      let a = "황";
+      if (a == "이") {
+        console.log("이");
+      } else if (a == "김") {
+        console.log("이");
+      } else if (a == "박") {
+        console.log("이");
+      } else {
+        console.log("아무것도 아님");
+      }
+
+      // switch 조건문
+      /* switch (변수){
+           case 값:
+             ~~
+           break;
+        }
+        */
+      let ex = "a";
+      switch (ex) {
+        case "a":
+          console.log("a입니다");
+          break;
+        case "b":
+          console.log("b입니다");
+          break;
+        default:
+          console.log("a,b 둘 다 아닙니다");
+      }
+
+      if (a > 5) {
+        console.log("5보다 크다");
+      } else {
+        console.log("5보다 작다");
+      }
+      /*  삼항 연산자 : 조건 ? 참일 때 : 거짓일 때 */
+      a > 5 ? console.log("5보다 크다") : console.log("5보다 작다");
+
+      // for 반복문
+      for (let index = 0; index < 10; index++) {
+        console.log("인사를", index + 1, "번째 드립니다.");
+      }
+
+      // while 반복문
+      let flag = true;
+      while (flag) {
+        let a = prompt("끝내고 싶으면 exit을 입력");
+        if (a == "exit") {
+          flag = false;
+        } else {
+          console.log("잘못입력했음");
+        }
+      }
+    </script>
+    <button onclick="test()">버튼</button>
+    <div style="background-color: yellow" onclick="test()">안녕</div>
+    <!-- onchange  변화를 가했을 때 -->
+    <input type="text" onchange="test(this)" />
+    <input type="text" onchange="test2(this)" />
+  </body>
+</html>

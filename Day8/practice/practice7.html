@@ -1,0 +1,39 @@
+<!-- js(2) 실습3+4. if문 이용 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    let age = prompt("나이를 입력해주세요");
+    age = Number(age);
+    let sex = prompt("성별을 입력해주세요. ex)남자, 여자");
+
+    if (age >= 20 && sex == "여자") {
+      console.log("성인 여자");
+    } else if (age >= 20 && sex == "남자") {
+      console.log("성인 남자");
+    } else if (age >= 17 && sex == "여자") {
+      console.log("고등 여학생");
+    } else if (age >= 17 && sex == "남자") {
+      console.log("고등 남학생");
+    } else if (age >= 14 && sex == "여자") {
+      console.log("중등 여학생");
+    } else if (age >= 14 && sex == "남자") {
+      console.log("중등 남학생");
+    } else if (age >= 8 && sex == "여자") {
+      console.log("초등 여학생");
+    } else if (age >= 8 && sex == "남자") {
+      console.log("초등 남학생");
+    } else if (age >= 0 && sex == "여자") {
+      console.log("여 유아");
+    } else if (age >= 0 && sex == "남자") {
+      console.log("남 유아");
+    } else {
+      console.log("성별을 ");
+    }
+  </script>
+  <body></body>
+</html>
