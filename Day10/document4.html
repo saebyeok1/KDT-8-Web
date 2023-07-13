@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div div {
+        width: 100px;
+        height: 100px;
+        border: 1px;
+        background-color: yellow;
+        margin-right: 10px;
+      }
+    </style>
+    <script>
+      function createNode() {
+        // 노드를 만드는 친구
+        // createElement(태그) : 요소를 생성해주는 친구
+        let li = document.createElement("li");
+        li.innerText = "새로 추가된 리스트";
+        console.log("li: ", li);
+        let td = document.createElement("h3");
+        console.log("td: ", td);
+      }
+      function appendNode() {
+        let input = document.getElementById("input");
+        let value = input.value;
+        // input 요소를 선택하고 value 속성을 이용하면 입력창의 값을 가져올 수 있다.
+        console.log("value: ", value);
+
+        let li = document.createElement("li");
+        li.innerText = value;
+        console.log("li: ", li);
+
+        // append() : 요소 .append() 선택한 요소의 맨 뒤 자식 요소로 추가가 된다.
+        let ul = document.querySelector("ul"); // 자식 요소로 추가 되기에 기준이 되는 부모가 필요함
+        ul.append(li);
+        ul.append("안녕");
+        // append()는 요소 노드(태그)가 아니여도 추가를 시켜줌
+      }
+      function appendChildNode() {
+        let input = document.getElementById("input");
+        let value = input.value;
+        console.log("value: ", value);
+
+        let li = document.createElement("li");
+        li.innerText = value;
+        console.log("li: ", li);
+
+        // appendChild() : 요소 .appendChild() 선택한 요소의 맨 뒤 자식 요소로 추가가 된다.
+        let ul = document.querySelector("ul");
+        ul.appendChild(li);
+        // ul.appendChild("안녀엉");
+        // appendChild()는 요소노드만 추가할 수 있다.
+      }
+      function prependNode() {
+        let input = document.getElementById("input");
+        let value = input.value;
+        console.log("value: ", value);
+
+        let li = document.createElement("li");
+        li.innerText = value;
+        console.log("li: ", li);
+
+        // prepend() : 요소.prepend() 선택한 요소의 맨 앞 자식 요소로 추가가 된다.
+        let ul = document.querySelector("ul");
+        ul.prepend(li);
+      }
+      function beforeNode() {
+        // 기존 노드 앞에 ( 형제 요소로 추가한다. )
+        let standard = document.getElementById("li");
+        console.log("standard: ", standard);
+
+        let li = document.createElement("li");
+        li.innerText = "before";
+        standard.before(li);
+      }
+      function afterNode() {
+        let standard = document.getElementById("li");
+        console.log("standard: ", standard);
+
+        let li = document.createElement("li");
+        li.innerText = "after";
+        standard.after(li);
+      }
+      function removeNode() {
+        // remove() : 삭제할 요소.remove() 내가 선택한 요소를 삭제
+        let standard = document.getElementById("li");
+        // remove()는 삭제된 요소를 반환해주지 않는다.
+        console.log(standard.remove());
+      }
+      function removeChildNode() {
+        // removeChild() : 삭제할 요소.removeChild() 선택한 요소의 자식 요소들을 삭제
+        let ul = document.querySelector("ul");
+        let standard = document.getElementById("li");
+
+        // removeChild()는 부모 요소를 선택(필수)해야 하지만, 삭제된 요소를 반환까지 해준다.(return값이 있음)
+        console.log(ul.removeChild(standard));
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="input" value="" />
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li id="li">3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+
+    <button onclick="createNode()">createNode</button>
+    <br />
+    <button onclick="appendNode()">appendNode</button>
+    <br />
+    <button onclick="appendChildNode()">appendChildNode</button>
+    <br />
+    <button onclick="prependNode()">prependNode</button>
+    <br />
+    <button onclick="beforeNode()">beforeNode</button>
+    <br />
+    <button onclick="afterNode()">afterNode</button>
+    <br />
+    <button onclick="removeNode()">removeNode</button>
+    <br />
+    <button onclick="removeChildNode()">removeChildNode</button>
+    <br />
+  </body>
+</html>

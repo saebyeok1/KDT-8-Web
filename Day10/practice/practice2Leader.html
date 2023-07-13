@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    작성자 : <input type="text" id="writer" />
+    <br />
+    내용 :<input type="text" id="content" />
+    <button onclick="writeList">작성</button>
+
+    <script>
+      function writeList() {
+        let writer = document.getElementById("writer").value;
+        let content = document.getElementById("content").value;
+
+        let date = new Date();
+        // 1. table 요소 가져온 후, tr, td createElement, tr append/ table에 tr넣음
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        td1.innerText = num;
+
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        // tr에 td를 append 해줘야함
+      }
+    </script>
+  </body>
+</html>
+-------------------
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      let num = 1;
+      function writeList() {
+        let writer = document.getElementById("writer").value;
+        let content = document.getElementById("content").value;
+
+        let date = new Date();
+        // 1.table 요소 가져온 후 tr, td createElement 만들고 tr에 append로 넣고, table에 tr 넣고
+
+        let tr = document.createElement("tr");
+        let html = `<td>${num}</td>`;
+        tr.innerHTML = html;
+        // let td1 = document.createElement("td");
+        // td1.innerText = num;
+        // td1.innerText = document.querySelectorAll("tr").length;
+        // let td2 = document.createElement("td");
+        // td2.innerText = writer;
+        // let td3 = document.createElement("td");
+        // td3.innerText = content;
+        // let td4 = document.createElement("td");
+        // td4.innerText = date;
+
+        // tr.append(td1);
+        // tr.append(td2);
+        // tr.append(td3);
+        // tr.append(td4);
+
+        let table = document.querySelector("table");
+        table.append(tr);
+        num++;
+      }
+    </script>
+  </head>
+  <body>
+    작성자 : <input type="text" id="writer" />
+    <br />
+    내용 : <input type="text" id="content" />
+
+    <br />
+    <button onclick="writeList()">작성</button>
+
+    <table border="1">
+      <tr>
+        <td>번호</td>
+
+        <td>작성자</td>
+        <td>내용</td>
+        <td>시간</td>
+      </tr>
+    </table>
+  </body>
+</html>

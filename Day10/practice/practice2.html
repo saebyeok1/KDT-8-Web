@@ -1,0 +1,51 @@
+<!-- 실습2. 방명로록 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습2</title>
+  </head>
+  <body>
+    <div><b>작성자</b> <input type="text" id="writer" value="" /></div>
+    <div>
+      <b>내용</b> <input type="text" size="50px" id="content" value="" />
+    </div>
+    <button onclick="writeTable()">작성</button>
+    <br />
+    <table border="1">
+      <tr>
+        <td>번호</td>
+        <td>작성자</td>
+        <td>내용</td>
+        <td>작성일</td>
+      </tr>
+    </table>
+
+    <script>
+      function writeTable() {
+        // let writer = document.getElementById("writer").value;
+        // let content = document.getElementById("content").value;
+
+        // let childTable = document.createElement("td");
+
+        // let parentTable = document.querySelector("tr");
+        // // childTable.innerText = value;
+        // parentTable.append(childTable);
+
+        let writer = document.getElementById("writer").value;
+        // let writerValue = writer.value;
+        let content = document.getElementById("content").value;
+        // let contentValue = content.value;
+
+        let tr = document.createElement("tr");
+        // td.innerText = writerValue;
+        // td.innerText = contentValue;
+        let td = document.getElementsByTagName("td");
+        while (td[4]) {}
+        let table = document.querySelector("table");
+        table.appendChild(td);
+      }
+    </script>
+  </body>
+</html>

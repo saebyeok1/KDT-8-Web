@@ -1,0 +1,49 @@
+<!-- 실습1. 간단 계산기 만들기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1</title>
+  </head>
+  <body>
+    <!-- 값1: <input type="text" id="input1" value="" /> <br>
+    input1 = value1..
+    -->
+
+    <div>값1: <input type="text" id="value1" value="" /></div>
+    <div>값2: <input type="text" id="value2" value="" /></div>
+    <div>연산자: <input type="text" id="op" value="" /></div>
+    <div>결과: <input type="text" id="result" value="" /></div>
+    <button onclick="calculate()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+    <script>
+      function calculate() {
+        let input1 = document.getElementById("value1").value; //String
+        let input2 = document.getElementById("value2").value; //String
+
+        input1 = Number(value1);
+        input2 = Number(value2);
+
+        let op = document.getElementById("op").value;
+
+        if (op == "+") {
+          document.getElementById("result").value = input1 + input2;
+        } else if (op == "-") {
+          document.getElementById("result").value = input1 - input2;
+        } else if (op == "*") {
+          document.getElementById("result").value = input1 * input2;
+        } else {
+          document.getElementById("result").value = input1 / input2;
+        }
+      }
+
+      function reset() {
+        document.getElementById("value1").value = "";
+        document.getElementById("value2").value = "";
+        document.getElementById("op").value = "";
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </body>
+</html>
