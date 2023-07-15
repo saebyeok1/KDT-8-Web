@@ -1,0 +1,60 @@
+<!-- 실습1. 이미지 바꾸기 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function banana() {
+        $("img").attr("src", "./banana.png");
+        $("img").addClass("src1");
+      }
+
+    function apple() { 
+       $("img").attr("src", "./apple.png");
+        $("img").addClass("src1");
+    }
+    function grape() { 
+       $("img").attr("src", "./grape.png");
+        $("img").addClass("src1");
+    }
+    function peach() { 
+        removeDiv();
+       $("img").attr("src", "./peach.png");
+        $("img").addClass("src1");
+    }
+    function removeDiv(){
+        $("div").css("display", "none")
+    }
+    </script>
+
+    <style>
+      .src1 {
+        height: 400px;
+        position: relative;
+        display: flex;
+      }
+    </style>
+    <title>실습1</title>
+  </head>
+  <body>
+      <div class="container">과일을 선택해주세요</div>
+      <img  />
+      <button onclick="banana()" >바나나</button>
+      <button onclick="apple()">사과</button>
+      <button onclick="grape()">포도</button>
+      <button onclick="peach()">복숭아</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery1</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // $(선택자).함수();
+      // $? jQuery(선택자).함수(); = $(선택자).함수(); (jQuery의 축약형태)
+      // $() : parameter로 선택자를 전달받아 특정 HTML 요소를 선택한다. -> 선택된 요소는 jquery 객체
+      // 함수 : jquery 메소드
+
+      //  1. input의 값을 가져오고 세팅하는 메소드
+      function setValue() {
+        // 어제 실습1에서 한 값넣기 내용
+        // document.getElementById("input").value = "안녕";
+
+        // $("#input").val() = "안녕"; --> 틀림
+        // val은  함수기 때문에 parameter 값을 괄호 안에 넣어줘야함
+        $("#input").val("안녕");
+      }
+      function getValue() {
+        //  document로 요소 선택하고, 그 요소가 input일 때 value 가져오기
+        // let value = document.getElementById("input").value;
+        let value = $("#input").val();
+
+        alert(value);
+      }
+
+      function changeStyle() {
+        // querySelector이기에 red div만 선택이 됨
+        // let div = document.querySelector("div");
+        // div.style = "border: 10px solid black";
+
+        // 2. style을 바꿔주는 함수
+        // $().css("속성", 속성값)
+        // jQuery는 태그로 인식해서 전부 다 선택을 하게 돼서 모든 div가 선택됨
+        // querySelector는 리스트로 받아서 한개만 선택됨
+        $("div").css("border", "10px solid black");
+      }
+
+      function changeText() {
+        // let div = document.querySelector("div");
+        // div.innerText = "jquery 사용 전 글자 바꾸기";
+
+        // 3. text를 추가해주는 함수
+        // $().text()
+        $("div").text("<b>jquery 사용후</b>");
+      }
+
+      function changeAttribute() {
+        // let a = document.querySelector("a");
+        // a.setAttribute("href", "http://www.google.com");
+        // setAttribute("속성", "속성값")
+
+        // 4. 속성값을 추가해주는 함수
+        // $().attr("속성","속성값")
+        $("a").attr("href", "http://www.google.com");
+      }
+      function changeHTML() {
+        // let div = document.querySelector("div");
+        // div.innerHTML = "jquery 사용 전 글자 바꾸기";
+
+        // 5. html을 추가해주는 함수
+        // $().html()
+        $("div").html("<b>jquery 사용후</b>");
+      }
+    </script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+
+      .div1 {
+        background-color: red;
+      }
+      .div2 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://www.naver.com">naver</a>
+    <input type="text" id="input" />
+    <div class="div1"></div>
+    <div class="div2"></div>
+
+    <button onclick="setValue()">setValue</button>
+    <button onclick="getValue()">getValue</button>
+    <button onclick="changeStyle()">changeStyle</button>
+    <button onclick="changeText()">changeText</button>
+    <!-- innerText -->
+    <button onclick="changeAttribute()">changeAttribute</button>
+    <!-- setAttribute -->
+    <button onclick="changeHTML()">changeHTML</button>
+    <!-- innerHTML -->
+  </body>
+</html>

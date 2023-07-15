@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
+      integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c="
+      crossorigin="anonymous"
+    ></script>
+    <title>jquery4</title>
+  </head>
+  <body>
+    <button>버튼</button>
+    <input type="text" />
+    <script>
+      //   window.addEventListener("load", function () {
+      //     console.log("로드 완료0");
+      //   });
+
+      // 로딩 이벤트
+      // 아래 3개의 이벤트가 모두 DOM 요소가 불러와진 후에 실행됨
+      $(window).ready(function () {
+        console.log("로드 완료1");
+      });
+      $(document).ready(function () {
+        console.log("로드 완료2");
+      });
+      $(function () {
+        console.log("로드 완료3");
+      });
+
+      //   $().on("이벤트명",콜백함수) = addEventListner("이벤트명",콜백함수)
+      $("button").on("click", function () {
+        alert("클릭");
+      });
+      // on 함수를 이용하지 않고 바로 쓸 수 있는 이벤트 함수
+      // click, scroll, mouseover, hover, keyupm, keydown
+      $("button").click(function () {
+        alert("클릭");
+      });
+
+      $("input").keyup(function (e) {
+        console.log(e);
+        console.log(e.key); // 키보드에 누른 값
+        console.log(e.keyCode); // 키 자판에 따른 코드
+        console.log(e.currentTarget); // 이벤트가 발동된 target을 가져옴
+        console.log(e.currentTarget.value); //이벤트가 발동된 target에 넣어진 value값을 가져옴
+      });
+    </script>
+  </body>
+</html>
