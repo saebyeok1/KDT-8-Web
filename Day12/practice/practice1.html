@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습1</title>
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 부트스트랩 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Cafe</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Map</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Coffee</a></li>
+                <li><a class="dropdown-item" href="#">Ade</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Menu Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-secondary" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <!-- 배경 -->
+    <div class="bgImg" style="position: relative">
+      <img
+        src="./bg1.png"
+        class="mx-auto d-block"
+        alt="..."
+        style="opacity: 0.85; filter: brightness(50%)"
+        width="100%"
+        height="450px"
+      />
+      <div style="position: absolute; top: 30%; left: 15%">
+        <h6 style="text-align: center; color: white; font-family: sans-serif">
+          CAFE&RESTAURANT
+        </h6>
+        <span
+          style="
+            font-size: 90px;
+            color: rgb(203, 167, 151);
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+          "
+          >RESTAURANT NAME</span
+        >
+      </div>
+    </div>
+    <!-- input group -->
+    <div style="margin: 80px">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">#</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Reservation Number"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recipient's name"
+          aria-label="Recipient's name"
+          aria-describedby="basic-addon2"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="basic-url" class="form-label">Contact E-mail </label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username"
+            aria-label="Username"
+          />
+          <span class="input-group-text">@</span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Server"
+            aria-label="Server"
+          />
+        </div>
+        <div class="form-text" id="basic-addon4">
+          Example help text goes outside the input group.
+        </div>
+      </div>
+    </div>
+
+    <!-- img -->
+    <div style="position: relative">
+      <img
+        src="./coffee1.png"
+        class="rounded"
+        alt="..."
+        width="300px"
+        style="position: absolute; left: 180px"
+      />
+
+      <div
+        class="rounded"
+        style="
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          left: 150px;
+          top: 20px;
+          z-index: -1;
+          background-color: rgb(148, 78, 78);
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          top: 130px;
+          left: 45%;
+          font-family: 'Indie Flower', cursive;
+          font-weight: bold;
+        "
+      >
+        <div class="text-black">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
+        </div>
+        <div class="text-black text-opacity-75">
+          voluptates laborum veniam quas molestiae in quibusdam itaque sed
+        </div>
+        <div class="text-black text-opacity-50">
+          libero, delectus alias harum modi voluptatibus aspernatur at
+          consequatur ea pariatur quod!
+        </div>
+        <div class="text-black text-opacity-25">
+          This is 25% opacity primary text
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

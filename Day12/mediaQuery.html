@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mediaQuery</title>
+    <style>
+      /* 300px보다 크면 */
+      body {
+        background-color: lightblue;
+      }
+
+      /* width가 480이 넘고 height가 300이상이면 핑크로 바뀜 */
+      @media screen and (min-width: 480px) and (max-height: 300px) {
+        body {
+          background-color: lightpink;
+        }
+      }
+
+      /* 300px보다 작아지면 */
+      @media screen and (max-width: 300px) {
+        body {
+          background-color: antiquewhite;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

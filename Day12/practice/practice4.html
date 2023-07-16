@@ -1,0 +1,135 @@
+<!-- 실습3. header 만들기 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습3</title>
+    <script
+      src="https://kit.fontawesome.com/837ff3adc1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      :root {
+        /* root는 html 태그를 의미하고 html 태그에 적용하겠다 */
+        --nav-height-lg: 100px;
+        --nav-height-sm: 60px;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      /* HEADER */
+      header {
+        width: 100%;
+        height: var(--nav-height-lg);
+        z-index: 100;
+      }
+      @media screen and (min-width: 769px) {
+        /* 768px 보다 클때의 header */
+
+        /* HEADER */
+        header {
+          width: 100%;
+          height: var(--nav-height-lg);
+          z-index: 100;
+        }
+
+        header .inner {
+          background-color: lightblue;
+          height: 100%;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+
+          /* justify-content: center; */
+        }
+
+        /* LOGO */
+        header .inner .logo {
+          color: white;
+          font-size: 30px;
+
+          /* position: relative;
+          right: 150px; */
+        }
+
+        header .inner .menu {
+          display: flex;
+        }
+
+        header .inner .menu li {
+          font-weight: bold;
+          width: 100px;
+
+          /* margin: 0px 10px;
+          font-weight: 800;
+          주석: 리더님 코드 */
+        }
+      }
+      /* 미디어 쿼리 작성 768px 이하일 때  */
+      @media screen and (max-width: 768px) {
+        header {
+          height: var(--nav-height-sm);
+        }
+
+        header .inner {
+          display: block;
+          background-color: lightblue;
+          height: 100%;
+        }
+
+        /* LOGO */
+        header .inner .logo {
+          /* position: static; */
+          /* 위에서 relative 처리를 했기 때문에 */
+          /* line-height: var(--nav-height-sm);  */
+          /* 헤더 크기 갖고 가서 씀*/
+          /* text-algin : center */
+
+          color: white;
+          font-size: 30px;
+          display: flex;
+          justify-content: center;
+          padding: 15px;
+        }
+
+        header .inner .menu {
+          display: block;
+
+          /* background-color: lightcyan; */
+          /* text-align : center */
+        }
+
+        header .inner .menu li {
+          background-color: lightcyan;
+          display: flex;
+          padding: 10px 0;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="inner">
+        <div class="logo">
+          <i class="fa-solid fa-igloo"></i>
+        </div>
+        <ul class="menu">
+          <li>메뉴1</li>
+          <li>메뉴2</li>
+          <li>메뉴3</li>
+          <li>메뉴4</li>
+        </ul>
+      </div>
+    </header>
+  </body>
+</html>
