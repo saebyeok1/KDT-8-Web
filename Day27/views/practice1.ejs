@@ -8,35 +8,53 @@
   <body>
     <h4>get으로 정보받기</h4>
     <form action="/getForm" method="get">
+      <!-- <label for="username">이름</label> -->
       <div>
         이름
         <input type="text" name="id" />
       </div>
       <fieldset>
         <legend>성별</legend>
-        <input type="radio" name="gender" value="남자" />남자
+        <input type="radio" name="gender" value="남자" id="men" />남자
+        <!-- <label for="men">남자</label> -->
         <input type="radio" name="gender" value="여자" />여자
+        <!-- <label for="women">여자</label> -->
       </fieldset>
       <fieldset>
         <legend>생년월일</legend>
         <select name="year">
+          <!-- <% for(let i = 1990;i<= 2000;i++){%>
+          <option value="<%=i %>"><%=i %></option>
+          <% }%> -->
           <option value="2010">2010</option>
         </select>
+        <!-- <label for="year">년</label> -->
         <span>년</span>
         <select name="month">
+          <!-- <% for(let i = 1;i<= 12;i++){%>
+          <option value="<%=i %>"><%=i %></option>
+          <% }%> -->
           <option value="5">5</option>
         </select>
+        <!-- <label for="month">월</label> -->
         <span>월</span>
         <select name="day">
+          <!-- <% for(let i = 1;i<= 31;i++){%>
+          <option value="<%=i %>"><%=i %></option>
+          <% }%> -->
           <option value="10">10</option>
         </select>
+        <!-- <label for="day">일</label> -->
         <span>일</span>
       </fieldset>
       <fieldset>
         <legend>관심사</legend>
-        <input type="checkbox" name="inter" value="여행" />여행
+        <input type="checkbox" name="inter" value="여행" id="travel" />여행
+        <!-- <label for="travel">여행</label> -->
         <input type="checkbox" name="inter" value="패션" />패션
+        <!-- <label for="fashion">패션</label> -->
         <input type="checkbox" name="inter" value="음식" />음식
+        <!-- <label for="food">음식</label> -->
       </fieldset>
       <button type="submit">회원가입</button>
     </form>
