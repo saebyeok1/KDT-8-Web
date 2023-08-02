@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>실습2 axios post 로그인</title>
+  </head>
+  <body>
+    <h3>axios post 로그인</h3>
+    <form name="login">
+      <label for="username">아이디</label>
+      <input type="text" name="username" id="username" required />
+      <br />
+      <label for="pwd">비밀번호</label>
+      <input type="password" id="pwd" name="pwd" required />
+      <br />
+      <button type="button" onclick="loginButton()">로그인</button>
+    </form>
+    <br />
+    <div class="result"></div>
+    <script>
+      const resultBox = document.querySelector(".result");
+
+      function loginButton() {
+        console.log("post login");
+        const data = {
+          username: document.querySelector("#username").value,
+          password: document.querySelector("#pwd").value,
+        };
+        console.log(data);
+
+        axios({
+          method: "POST",
+          url: "/resultPost",
+          data,
+        }).then((res) => {
+          console.log(res);
+          // 구조 분해 할당
+          const { result, userInfo } = res.data;
+
+          if (result) {
+            resultBox.textContent = `${userInfo.username}님 환영합니다!!`;
+            resultBox.style.color = "blue";
+          } else {
+            resultBox.textContent = "로그인에 실패했습니다";
+            resultBox.style.color = "red";
+          }
+          // if (res.data.result) {
+          //   resultBox.textContent = `${res.data.userInfo.username}님 환영합니다!!`;
+          //   resultBox.style.color = "blue";
+          // } else {
+          //   resultBox.textContent = "로그인에 실패했습니다";
+          //   resultBox.style.color = "red";
+          // }
+        });
+      }
+    </script>
+  </body>
+</html>

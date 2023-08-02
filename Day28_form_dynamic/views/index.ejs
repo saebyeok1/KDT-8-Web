@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 동적 폼 할 때는 action, method 사용안할거임 -->
+    <form name="register">
+      <label for="name">이름</label>
+      <input type="text" id="name" required />
+      <br />
+      성별
+      <input type="radio" name="gender" id="male" value="남자" />
+      <label for="male">남자</label>
+      <input type="radio" name="gender" id="female" value="여자" />
+      <label for="female">여자</label>
+      <br />
+      <button type="button" onclick="ajaxGet()">ajax get 제출</button><br />
+      <button type="button" onclick="ajaxPost()">ajax post 제출</button><br />
+      <button type="button" onclick="axiosGet()">axios get 제출</button><br />
+      <button type="button" onclick="axiosPost()">axios post 제출</button><br />
+      <button type="button" onclick="fetchGet()">fetch get 제출</button><br />
+      <button type="button" onclick="fetchPost()">fetch post 제출</button><br />
+    </form>
+    <div class="result"></div>
+    <script>
+      const resultBox = document.querySelector(".result");
+
+      function ajaxGet() {
+        console.log("ajax get");
+
+        // 폼 선택하기
+        const form = document.forms["register"];
+        // console.log(form);
+        // console.log(form.name);
+        // console.log(form.gender);
+        // console.log(form.name.value);
+        // console.log(form.gender.value);
+
+        // 예외처리를 여기서 해주면 됨
+        if (form.name.value == "") {
+          alert("이름을 입력하세요!!");
+          return;
+          //return을 안하면 아래 코드까지 실행하기 때문에 예외처리시에 return해줘야함
+        }
+
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        $.ajax({
+          type: "GET",
+          url: "/ajax",
+          // key와 value가 동일할 때는 생략이 가능함
+          data: data,
+          success: (res) => {
+            console.log("res", res);
+            resultBox.textContent = `GET /ajax 요청완료 ${res.name}님은 ${res.gender}이시죠?`;
+            resultBox.style.color = "blue";
+          },
+        });
+      }
+      function ajaxPost() {
+        console.log("ajax post");
+
+        // 폼 선택하기
+        const form = document.forms["register"];
+
+        // 예외처리를 여기서 해주면 됨
+        if (form.name.value == "") {
+          alert("이름을 입력하세요!!");
+          return;
+          //return을 안하면 아래 코드까지 실행하기 때문에 예외처리시에 return해줘야함
+        }
+
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        $.ajax({
+          type: "POST",
+          url: "/ajax",
+          data: data,
+          success: (res) => {
+            console.log("res", res);
+            resultBox.textContent = `POST /ajax 요청완료 ${res.name}님은 ${res.gender}이시죠?`;
+            resultBox.style.color = "red";
+          },
+        });
+      }
+
+      function axiosGet() {
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+        console.log("axios get");
+        axios({
+          method: "GET",
+          //   url: `/axios?name=${form.name.value}&gender=${form.gender.value}`
+          url: "/axios",
+          params: data,
+        }).then((res) => {
+          console.log(res);
+          resultBox.textContent = `GET /axios 요청 완료! ${res.data.name} 님은 ${res.data.gender} 이시죠?`;
+          resultBox.style.color = "green";
+        });
+      }
+
+      async function axiosPost() {
+        console.log("axios post");
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+        const result = await axios({
+          method: "POST",
+          url: "/axios",
+          data: data,
+        });
+        resultBox.textContent = `POST /axios 요청 완료! ${result.data.name} 님은 ${result.data.gender} 이시죠?`;
+        resultBox.style.color = "purple";
+        // console.log(result);
+      }
+
+      function fetchGet() {
+        console.log("fetch get");
+        const form = document.forms["register"];
+        const url = `?name=${form.name.value}&gender=${form.gender.value}`;
+
+        fetch(`/fetch${url}`, { method: "GET" })
+          .then((res) => {
+            console.log("res", res);
+            // JSON 응답을 네이티브 javascript 객체로 파싱
+            return res.json();
+          })
+          .then((data) => {
+            console.log("data", data);
+            resultBox.textContent = `GET /fetch 요청왈뇨! ${data.name}님은 ${data.gernder} 이시죠 `;
+            resultBox.style.color = "limegreen";
+          });
+      }
+
+      function fetchPost() {
+        console.log("fetch post");
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+        fetch("/fetch", {
+          method: "POST",
+          // 헤더로 보내는 타입을 정한다
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // JSON.stringify(): 자바 스크립트 객체를 JSON 텍스트로 변환
+          // JSON.parse(): JSON 형식의 텍스트를 자바스크립트 객체로 변환
+          body: JSON.stringify(data),
+        })
+          .then((res) => {
+            console.log("res", res);
+            return res.json();
+          })
+          .then((data) => {
+            console.log("data", data);
+            resultBox.textContent = `POST /fetch 요청완료! ${data.name}님은 ${data.gender} 이시죠 `;
+            resultBox.style.color = "limegreen";
+          });
+      }
+    </script>
+  </body>
+</html>
