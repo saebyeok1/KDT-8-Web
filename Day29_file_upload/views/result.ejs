@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>결과 값</title>
+  </head>
+  <body>
+    <div>
+      <h3><%= userInfo.username %>님 환영합니다</h3>
+      <ul>
+        <li>아이디:<%= userInfo.userId %></li>
+        <li>나이:<%= userInfo.age %></li>
+      </ul>
+      <!-- 백엔드에서 보내줄거임 -->
+      <img src="<%= profile %>" width="100" />
+    </div>
+  </body>
+</html>
