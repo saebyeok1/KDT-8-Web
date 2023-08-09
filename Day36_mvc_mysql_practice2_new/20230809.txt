@@ -1,0 +1,11 @@
+mvc mysql practice2 ES6 문법으로 고친 버전
+
+import 문을 사용하는 "type": "module",
+
+npm i mysql2
+
+views는 그대로, User.js에서 많이 바뀜
+
+준비된 query : ?,?
+
+res.status(number).send : 오류처리할 때 사용
