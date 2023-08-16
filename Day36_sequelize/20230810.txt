@@ -1,0 +1,6 @@
+config db :접속정보
+models db: db정보
+
+param3은 생략가능 (option임)
+
+쿼리문은 전부 객체로 오지만 findAll만 배열로 옴
