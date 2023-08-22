@@ -1,0 +1,12 @@
+20230817
+OAuth (OpenAuthorization)
+- 외부 사이트에서 로그인할 때 타 네이버,카카오,구글 정보로 로그인이 가능하게 하는
+
+jwt 공개 토큰 - 중요정보를 담으면 안됨
+
+즉시실행함수 (function(){})()
+
+s내가막힌부분: 로컬스토리지에 토큰값저장
+
+res.send -> spring, json 모두 포함한
+res.json -> json만

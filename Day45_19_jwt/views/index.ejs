@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>실습. JWT 연습</title>
+  </head>
+  <body>
+    <h1>JWT연습</h1>
+    <div id="info"></div>
+
+    <script>
+      // 즉시실행함수
+      (async function () {
+        const token = localStorage.getItem("login");
+        const info = document.querySelector("#info");
+        let data = "";
+        if (!token) {
+          data = '<a href="/login">로그인</a>';
+        } else {
+          const res = await axios({
+            method: "POST",
+            url: "/token",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          if (res.data.result) {
+            data = `
+            <p>${res.data.name}님 환영합니다.</p>
+            <button type="buttn" onclick="logout()">로그아웃</button>`;
+          }
+        }
+        info.innerHTML = data;
+      })();
+
+      function logout() {
+        localStorage.clear();
+        document.location.reload();
+      }
+
+      // async await을 사용하려는데 function이 없음!! 이럴 땐 즉시실행함수 사용
+
+      // const token = localStorage.getItem("login");
+      // const info = document.querySelector("#info");
+      // let data = "";
+      // if (!token) {
+      //   data = '<a href="/login">로그인</a>';
+      // } else {
+      //   axios({
+      //     method: "POST",
+      //     url: "/token",
+      //     headers: {
+      //       Authorization: `Bearer ${token}`,
+      //     },
+      //   });
+      //   data = `
+      //   <p>000님 환영합니다.</p>
+      //   <button>로그아웃</button>`;
+      // }
+      // info.innerHTML = data;
+    </script>
+  </body>
+</html>
