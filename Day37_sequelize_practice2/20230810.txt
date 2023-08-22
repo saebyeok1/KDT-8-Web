@@ -1,0 +1,17 @@
+update는 2개의 객체라고 생각하면 됨
+첫번 째는 바꾸고 싶은 거, 두번 째는 어디서 바꿀 건지
+models.User.update({},{})
+
+Cuser.js에서 
+// router에서 작성후에 controller에서 작성
+
+findAll() : 배열 형태로 가져오는데 
+1. attributes : 원하는 컬럼 조회
+2. where 조건문 : Op.gt(초과), Op.gte(이상), Op.lt(미만) ,op.ne(같지 않은), Op.or(또는), Op.in(배열 요소 중 하나), Op.notIn(배열 요소와 모두 다름)
+
+Op를 사용하기 위해서 const {Op} = require("sequelize") 작성을 해줘야함
+
+3. order은 배열 형태로 가지고 있음
+// order: [["id","DESC"]] > ID를 DESC(역순)으로 가져오라는 뜻
+
+4. limit, offset은 숫자만 입력
