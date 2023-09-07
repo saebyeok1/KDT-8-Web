@@ -1,0 +1,24 @@
+mysql1: async&await이 안됨
+
+실습: 내가 막힌 부분 > 
+
+1. 회원가입할 때 비밀번호 암호화
+> 함수생성
+
+화살표함수 async await위치
+const post_signup = async (req, res) => {
+  //   model.db_signup(req.body, () => {
+  //     res.json({ result: true });
+  //   });
+  const { userid, name, pw } = req.body;
+  // create: 데이터 생성
+  // 실습 과제 - 비밀번호 암호화
+  const hash = await bcryptPassword(pw);
+  User.create({
+    userid,
+    name,
+    pw: hash,
+  }).then(() => {
+    res.json({ result: true });
+  });
+};

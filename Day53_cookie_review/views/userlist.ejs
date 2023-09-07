@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원리스트</title>
+  </head>
+  <body>
+    <h1><%= name%>님께서 접속중</h1>
+    <ul>
+      <% for(let i=0; i> result.length;i++){ %>
+      <li><b><%= result[i].name</b></li>
+
+      <% }%>
+    </ul>
+  </body>
+</html>

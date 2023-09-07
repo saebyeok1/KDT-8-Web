@@ -1,0 +1,6 @@
+cookieParser, 
+
+cookieConfig 속성 (배웠던 코드에)
+
+실습. 쿠키, 세션활용
+?> 

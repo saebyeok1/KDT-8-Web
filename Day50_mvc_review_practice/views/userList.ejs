@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>회원 리스트 조회</title>
+  </head>
+  <body>
+    <h1>회원 리스트</h1>
+    <% for(let i =0; i < data.length; i++) { %>
+    <ul>
+      <li>
+        이름:
+        <a href="/user/<%= data[i].id %>"> <%= data[i].username %></a>
+        성별: <%= data[i].gender %> 전공: <%= data[i].major %>
+      </li>
+    </ul>
+    <% } %>
+    <ul class="hi"></ul>
+
+    <form name="adduser">
+      <input type="text" placeholder="이름" id="name" /><br />
+      <select name="gender" id="gender">
+        <option value="여자">여자</option>
+        <option value="남자">남자</option></select
+      ><br />
+      <input type="text" placeholder="전공" id="major" /><br />
+      <button type="button" onclick="addUser()">추가</button>
+    </form>
+    <br />
+    <a href="/">홈으로 이동</a>
+
+    <script>
+      async function addUser() {
+        const form = document.forms["adduser"];
+        const list = document.querySelector(".hi");
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+          major: form.major.value,
+        };
+        console.log(data);
+        try {
+          const res = await axios({
+            method: "POST",
+            url: "/userList",
+            data,
+          });
+          console.log(res.data);
+          list.innerHTML = `<li>
+        이름: ${res.data.userInfo.name}
+        성별: ${res.data.userInfo.gender}
+        전공: ${res.data.userInfo.major}
+      </li>`;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    </script>
+  </body>
+</html>

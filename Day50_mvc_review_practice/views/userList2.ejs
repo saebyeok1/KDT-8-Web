@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>회원 리스트 조회</title>
+  </head>
+  <body>
+    <h1>회원 리스트</h1>
+    <ul id="lists">
+      <% for(let i =0; i < data.length; i++) { %>
+      <li>
+        <p>
+          이름:
+          <a href="/user/<%= data[i].id %>"> <%= data[i].name %></a>
+        </p>
+        <p>성별: <%= data[i].gender %></p>
+        <p>전공: <%= data[i].major %></p>
+      </li>
+      <% } %>
+    </ul>
+    <div>
+      <form name="register">
+        <input type="text" id="username" placeholder="이름" /><br />
+        <input type="text" id="gender" placeholder="성별" /><br />
+        <input type="text" id="major" placeholder="전공" /><br />
+        <button type="button" onclick="registerFunc()">등록</button>
+      </form>
+    </div>
+    <script>
+      function registerFunc() {
+        const lists = document.querySelector("#lists li");
+        const form = document.forms["register"];
+        const data = {
+          name: form.username.value,
+          gender: form.gender.value,
+          major: form.major.value,
+        };
+        axios({
+          method: "POST",
+          url: "/userList",
+          data,
+        }).then((res) => {
+          document.location.reload();
+        });
+      }
+    </script>
+  </body>
+</html>

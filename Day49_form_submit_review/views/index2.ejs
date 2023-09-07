@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h4>GET 요청</h4>
+    <form action="/getForm" method="GET">
+      <input type="text" placeholder="id" name="id" /><br />
+      <input type="password" placeholder="password" name="password" /><br />
+      <button type="submit">제출</button>
+    </form>
+    <hr />
+    <h4>POST 요청</h4>
+    <form action="/postForm" method="POST">
+      <input type="text" placeholder="id" name="id" /><br />
+      <input type="password" placeholder="password" name="password" /><br />
+      <button type="submit">제출</button>
+    </form>
+  </body>
+</html>

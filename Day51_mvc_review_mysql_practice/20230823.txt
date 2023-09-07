@@ -1,0 +1,13 @@
+MVC mysql 회원조회, 수정,삭제
+
+*main.js > router.get("/profile/:name", controller.profile);
+Query string 방식은 페이지 그 자체에 있기 때문에 url을 지정해주지 않아도 됨
+(페이지 이동X)
+파라미터 방식은 직접 페이지를 이동하기 때문에 url을 정해줘야함
+(페이지 이동O)
+
+파라미터 형식으로 사용하고 싶으면 스크립트에서 순서 중요
+
+*Cmain.js > const profile
+req.query > http://localhost:8000/profile/hi?name=hihihi를 입력시 {name:"hihihi"}가 출력됨
+req.params > http://localhost:8000/profile/hi 로 입력시 console.log(req.parmas)에는 name:"hi" 출력됨

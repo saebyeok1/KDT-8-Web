@@ -1,0 +1,7 @@
+button type submit, button 
+submit -> form에 event를 걸어 비동기처리 가능 
+(form onsubmit(event)) -> e.preventDefault(); // 기본 제출 동작을 막음
+axios 코드 작성 -> then 전에 index.js(백엔드로 넘어옴) res.json으로 응답을 해줌 -> 백엔드에서 코드작성한 값(응답해준 값)이 then으로 보내짐 
+
+
+res.json: application/json 형태로 응답할 때 사용

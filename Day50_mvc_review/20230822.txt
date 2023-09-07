@@ -1,0 +1,47 @@
+MVC 나누는 방법
+  1. router로 나누기
+  2. router로 나눈 얘들 controller로 보내기
+  3. controller data들을 model로 보내고 연결
+
+
+<index2.js>
+req.params => :(value)
+{(value):"1"} 
+콜론 ":" 뒤에 붙은 변수가 key, 그 값이 value
+
+  res.render("comment", { data: comments[Number(req.params.index) - 1] });
+  >> 배열로 접근하기 때문에 index가 3인 배열로 가려면 -1인 값인 [2]로 가야함
+
+</routes/main.js>
+module.exports는 nodejs가 전역에서 router가 어딨는 지 찾음
+
+index2.js에 있는 router들을 routes에 있는 main.js로 옮겨주고 router 선언해주면 됨 (index.js에 있는 router 분리)
+>> router를 옮겨주고 여기에..router가 있었다 흔적을 남겨줬다 생각하면 됨
+
+routes로 옮긴 router들은 app(express)를 사용하지 않기 때문에 선언해놓은 router (const router = exrpress.Router())로 바꿔줘야함
+
+
+</controller/Cmain.js>
+방법1. 
+const test = () => {}
+module.exports = test
+ex)
+const main = (req, res) => {
+  res.render("index");
+};
+module.exports={
+    main,
+}
+
+
+방법2. 
+module.exports.test = "함수, 변수 등 모두 사용";
+exports.test =""; 
+ex)
+(module).exports.main = (req, res) => {
+  res.render("index");
+};
+
+</model/Model.js>
+index2.js에 있던 DB값들을 옮겨줌
+옮긴 DB를 controller에서 사용해야하기 때문에 controller에 모델도 선언해줌
