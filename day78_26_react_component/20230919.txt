@@ -1,0 +1,12 @@
+Component> 협업에 유리
+목록을 하나씩 만들고 세부적으로 들어감
+
+- 함수형 Component 
+    짧고 직관적
+    (결국 나중엔 함수형만 사용하면 됨)
+
+- 클래스형 Component
+
+
+Props
+isrequired
