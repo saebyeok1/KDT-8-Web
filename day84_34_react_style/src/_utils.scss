@@ -1,0 +1,75 @@
+// _utils.scss
+// Scss 파일명 앞에 _를 붙여서 작성하면 파일 단위로 분리되어 컴파일 되지 않는다. ( 변수같은 것들 )
+
+$color-red: #ff7474;
+$color-orange: rgb(255, 208, 120);
+$color-yellow: rgb(255, 255, 124);
+$color-green: rgb(48, 135, 48);
+$color-blue: rgb(98, 98, 255);
+$color-navy: rgb(52, 52, 136);
+$color-purple: rgb(135, 63, 135);
+
+@mixin box($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin circlesize($size) {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    // position: absolute;
+}
+
+@mixin position($top, $left) {
+    top: 100px + $top;
+    left: 100px + $left;
+}
+
+////////////// Prac2 ////////////
+
+// 원 색상
+@mixin circleColor($color) {
+    background-color: $color;
+}
+
+@mixin animation($name) {
+    // animation: $name 3s ease infinite 6 linear;
+    position: relative;
+    animation-delay: 0s;
+    animation-name: $name;
+    // 무제한으로
+    // animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+// @mixin keyframe($animation-name) {
+//     @keyframes #{$animation-name} {
+//         @content;
+//     }
+// }
+
+@mixin keyframe($animation-name, $size) {
+    @keyframes #{$animation-name} {
+        0% {
+            top: 0;
+            left: 0;
+        }
+        25% {
+            top: 0;
+            left: $size;
+        }
+        50% {
+            top: $size;
+            left: $size;
+        }
+        75% {
+            top: $size;
+            left: 0;
+        }
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+}

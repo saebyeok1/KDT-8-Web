@@ -1,0 +1,108 @@
+@import './utils.scss';
+
+.Prac2MovingCircle {
+    // position: relative;
+
+    .circle {
+        @include circlesize(80px);
+        // border: 1px solid black;
+
+        &.pink {
+            @include keyframe(pink, 100px); // @include keyframe(pink) {
+            //     0% {
+            //         top: 0px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            //     25% {
+            //         top: 0px;
+            //         right: 0px;
+            //         left: 10px;
+            //     }
+            //     50% {
+            //         top: 10px;
+            //         right: 0px;
+            //         left: 10px;
+            //     }
+            //     75% {
+            //         top: 10px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            //     100% {
+            //         top: 0px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            // }
+            @include animation(pink);
+            @include circleColor($color-red);
+        }
+
+        &.green {
+            @include keyframe(green, 300px);
+            // @include keyframe(green) {
+            //     0% {
+            //         top: 0px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            //     25% {
+            //         top: 0px;
+            //         right: 0px;
+            //         left: 30px;
+            //     }
+            //     50% {
+            //         top: 30px;
+            //         right: 0px;
+            //         left: 30px;
+            //     }
+            //     75% {
+            //         top: 30px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            //     100% {
+            //         top: 0px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            // }
+            @include animation(green);
+            @include circleColor($color-green);
+        }
+        &.yellow {
+            @include keyframe(yellow, 200px);
+            @include circleColor($color-yellow);
+
+            // @include keyframe(yellow) {
+            //     0% {
+            //         top: 0px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            //     25% {
+            //         top: 0px;
+            //         right: 0px;
+            //         left: 20px;
+            //     }
+            //     50% {
+            //         top: 20px;
+            //         right: 0px;
+            //         left: 20px;
+            //     }
+            //     75% {
+            //         top: 20px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            //     100% {
+            //         top: 0px;
+            //         left: 0px;
+            //         right: 0px;
+            //     }
+            // }
+            @include animation(yellow);
+        }
+    }
+}
